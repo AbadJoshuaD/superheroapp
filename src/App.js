@@ -5,8 +5,8 @@ import { SearchBox } from "./components/searchbox/searchbox.component";
 import { HeroInfo } from "./components/hero-info/hero-info.component";
 
 class SuperHeroApp extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       superhero: [],
       searchField: ""
@@ -14,22 +14,22 @@ class SuperHeroApp extends Component {
   }
   async componentDidMount() {
     const res = await fetch(
-      "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/id/1.json"
+      "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/id/346.json"
     );
-    const superhero = await res.json();
+    const heroes = await res.json();
     this.setState((prevState, prevProps) => {
       return {
-        superhero: superhero
+        superhero: [heroes]
       };
     });
   }
   render() {
-    const { name } = this.state.superhero;
+    const { superhero, searchField } = this.state;
     return (
       <Fragment>
         <Header></Header>
         <SearchBox></SearchBox>
-        <HeroInfo></HeroInfo>
+        <HeroInfo heroes={superhero}></HeroInfo>
       </Fragment>
     );
   }

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide&display=swap");
+
+.image-container{
+    display:grid;
+    grid-template-rows: 5fr 2fr;
+    justify-items: center;
+    align-items: center;
+    background-image: url('../../images/technology-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 75vh;
+    z-index: 1;
+
+    .hero-image{
+        margin-bottom:-110px;
+        margin-left:-20px;
+        border:2px solid darkblue;
+        width:45%;
+        height:auto;
+    }
+    .hero-name{
+        display:inline-block;
+        position: relative;
+        color: darkblue;
+        font-size: 32px;
+        font-weight: 900;
+        font-family: 'Audiowide', cursive;
+        margin-top:-130px;
+        margin-left:-20px;
+    }
+    .hero-name::before{
+        content: '';
+        position: absolute;
+        width:100%;
+        transform: scaleX(0);
+        height: 1.5px;
+        bottom:0;
+        left:0;
+        background-color: darkred;
+        transform-origin: bottom left;
+        transition:transform 0.3s ease-out;
+    }
+    .hero-name:hover::before{
+        transform: scaleX(1);
+        transform-origin: bottom right;
+    }
+
+}
