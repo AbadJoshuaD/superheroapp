@@ -8,7 +8,6 @@
     background-image: url('../../images/technology-bg.jpg');
     background-repeat: no-repeat;
     background-size: 100% 75vh;
-    z-index: 1;
 
     .hero-image{
         margin-bottom:-110px;
@@ -21,10 +20,10 @@
         display:inline-block;
         position: relative;
         color: darkblue;
-        font-size: 32px;
+        font-size: 24px;
         font-weight: 900;
         font-family: 'Audiowide', cursive;
-        margin-top:-130px;
+        margin-top:-110px;
         margin-left:-20px;
     }
     .hero-name::before{
